@@ -8,10 +8,7 @@ const cors = require("cors");
 const connectToDatabase = require("./database");
 
 // Routes
-const studentRoutes = require("./src/routes/student");
 const courseRoutes = require("./src/routes/course");
-const batchRoutes = require("./src/routes/batch");
-const courseRegistrationRoutes = require("./src/routes/course_registration");
 const user_typeRoutes = require("./src/routes/user_type");
 const userRoutes = require("./src/routes/user");
 
@@ -35,10 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 connectToDatabase();
 
 // Routes
-app.use("/api", studentRoutes);
 app.use("/api", courseRoutes);
-app.use("/api", batchRoutes);
-app.use("/api", courseRegistrationRoutes);
 app.use("/api", user_typeRoutes);
 app.use("/api", userRoutes);
 
