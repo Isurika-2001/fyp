@@ -27,39 +27,18 @@ const pages = {
   type: 'group',
   children: [
     {
-      id: 'students',
-      title: 'Students',
+      id: 'home',
+      title: 'Home',
       type: 'item',
-      url: '/app/students',
-      icon: icons.UsergroupDeleteOutlined
-    },
-    {
-      id: 'course-registrations',
-      title: 'Course Registrations',
-      type: 'item',
-      url: '/app/course-registrations',
-      icon: icons.FileAddOutlined
-    },
-    {
-      id: 'courses',
-      title: 'Courses',
-      type: 'item',
-      url: '/app/courses',
+      url: '/app/home',
       icon: icons.AppstoreOutlined
-    },
-    {
-      id: 'batches',
-      title: 'Batches',
-      type: 'item',
-      url: '/app/batches',
-      icon: icons.BranchesOutlined
     },
     {
       id: 'users',
       title: 'Users',
       type: 'item',
       url: '/app/users',
-      icon: icons.ProfileOutlined
+      icon: icons.UsergroupDeleteOutlined
     }
   ]
 };

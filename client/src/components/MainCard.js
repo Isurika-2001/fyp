@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
+import { Card, CardContent, CardHeader, Divider, Typography, Button } from '@mui/material';
 
 // project import
 import Highlighter from './third-party/Highlighter';
@@ -30,6 +30,8 @@ const MainCard = forwardRef(
       shadow,
       sx = {},
       title,
+      buttonLabel,
+      onButtonClick,
       codeHighlight,
       ...others
     },
@@ -62,7 +64,23 @@ const MainCard = forwardRef(
       >
         {/* card header and action */}
         {!darkTitle && title && (
-          <CardHeader sx={headerSX} titleTypographyProps={{ variant: 'subtitle1' }} title={title} action={secondary} />
+          <CardHeader
+            sx={headerSX}
+            title={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                {darkTitle ? <Typography variant="h3">{title}</Typography> : title}
+              </div>
+            }
+            action={
+              <div>
+                {buttonLabel && onButtonClick && (
+                  <Button variant="contained" color="primary" onClick={onButtonClick}>
+                    {buttonLabel}
+                  </Button>
+                )}
+              </div>
+            }
+          />
         )}
         {darkTitle && title && <CardHeader sx={headerSX} title={<Typography variant="h3">{title}</Typography>} action={secondary} />}
 
